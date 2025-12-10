@@ -369,6 +369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toSpawn: {fileID: 1674645754912023638, guid: 50f5ddd5d09ecca4d919caa3b49fb0e3, type: 3}
+  previsGO: {fileID: 6357821088903401573, guid: e87a2268eb5ddcb4384c89534c7ac6c0, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

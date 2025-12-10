@@ -22,10 +22,17 @@ public class GridCell : MonoBehaviour
         gO.transform.position = transform.position + Vector3.up;
     }
 
-    public void startHover()
+    public void startHover(GameObject gO)
     {
-        transform.localScale = Vector3.one * 1.5f;
+        transform.localScale = Vector3.one * 1.1f;
         gameObject.GetComponent<Renderer>().material = hoverMaterial;
+        if (objectOnThis != null)
+        {
+            gO.transform.position = Vector3.down;
+            return;
+        }
+        if (gO != null) 
+            gO.transform.position = transform.position + Vector3.up;
     }
     public void stopHover()
     {

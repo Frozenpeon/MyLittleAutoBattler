@@ -6,8 +6,15 @@ public class MouseManager : MonoBehaviour
 {
 
     public GameObject toSpawn;
+    public GameObject previsGO;
+
     GridCell cell;
     GridCell oldCell;
+    GameObject previs;
+    private void Start()
+    {
+        previs = Instantiate(previsGO);
+    }
     private void Update()
     {
         if (rayCastFromCamera().collider != null)
@@ -16,10 +23,13 @@ public class MouseManager : MonoBehaviour
             cell = null;
 
         if (oldCell != cell && oldCell != null)
+        {
             oldCell.stopHover();
+            previs.transform.position = Vector3.down;
+        }
 
         if (cell != null)
-            cell.startHover();
+            cell.startHover(previs);
 
         if (Input.GetMouseButtonDown(0))       
             if (cell != null)
